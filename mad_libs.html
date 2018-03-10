@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.1/tachyons.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Mad Libs</title>
+</head>
+<body>
+  <div class="ph3 ph4-ns pv3">
+      <div id="mad-libs" ></div>
+      <button id="get-mad-lib">Generate Mad Lib</button>
+      <div id="people"></div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script id="person-template" type="text/x-handlebars-template">
+    <div class="person fl w-33-ns h6">
+      <h1>{{name}}</h1>
+      <div class="details">
+        {{#if timestamp}}
+          <p>{{ timestamp }}</p>
+        {{/if}}
+        {{#if favoriteColor}}
+          <p>Favorite Color: {{favoriteColor}}</p>
+        {{/if}}
+        {{#if hometown}}
+          <p>Hometown: {{ hometown }}</p>
+        {{/if}}
+        {{#if favoriteTimeOfDay}}
+          <p>Favorite time: {{ favoriteTimeOfDay }}</p>
+        {{/if}}
+        {{#if favoriteMovies}}
+          <p>Favorite Movies:</p>
+          <ul>
+            {{#each favoriteMovies}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+        {{#if favoriteSuperhero}}
+          <p>Favorite Superhero: {{ favoriteSuperhero }}</p>
+        {{/if}}
+        {{#if favoriteFood}}
+          <p>Favorite Food: {{ favoriteFood }}</p>
+        {{/if}}
+      </div>
+    </div>
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
